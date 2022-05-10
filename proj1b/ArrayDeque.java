@@ -1,20 +1,33 @@
-public class ArrayDeque<T> implements Deque<T>{
+public class ArrayDeque<T> implements Deque<T> {
 
-    /** array to save data.*/
+    /**
+     * array to save data.
+     */
     private T[] array;
-    /** size of the deque. */
+
+    /**
+     * size of the deque.
+     */
     private int size;
 
-    /** size of the array. */
+    /**
+     * size of the array.
+     */
     private int length;
 
-    /** front index. */
+    /**
+     * front index.
+     */
     private int front;
 
-    /** last index. */
+    /**
+     * last index.
+     */
     private int last;
 
-    /** constructor for ArrayDeque. */
+    /**
+     * constructor for ArrayDeque.
+     */
     public ArrayDeque() {
         array = (T[]) new Object[8];
         size = 0;
@@ -23,7 +36,9 @@ public class ArrayDeque<T> implements Deque<T>{
         last = 4;
     }
 
-    /** decide if the deque is empty.
+    /**
+     * decide if the deque is empty.
+     *
      * @return true if the deque is empty, vice versa.
      */
     @Override
@@ -31,13 +46,17 @@ public class ArrayDeque<T> implements Deque<T>{
         return size == 0;
     }
 
-    /** return the size of the deque. */
+    /**
+     * return the size of the deque.
+     */
     @Override
     public int size() {
         return size;
     }
 
-    /** return the "index - 1".
+    /**
+     * return the "index - 1".
+     *
      * @param index index
      */
     private int minusOne(int index) {
@@ -47,7 +66,9 @@ public class ArrayDeque<T> implements Deque<T>{
         return index - 1;
     }
 
-    /** return the "index + 1".
+    /**
+     * return the "index + 1".
+     *
      * @param index index
      */
     private int plusOne(int index, int module) {
@@ -88,7 +109,9 @@ public class ArrayDeque<T> implements Deque<T>{
         length /= 2;
     }
 
-    /** add one item at the front of the deque.
+    /**
+     * add one item at the front of the deque.
+     *
      * @param item the item we want to add
      */
     @Override
@@ -101,7 +124,9 @@ public class ArrayDeque<T> implements Deque<T>{
         size++;
     }
 
-    /** add one item at the end of the deque.
+    /**
+     * add one item at the end of the deque.
+     *
      * @param item item we want to add
      */
     @Override
@@ -114,7 +139,9 @@ public class ArrayDeque<T> implements Deque<T>{
         size++;
     }
 
-    /** remove the first item.
+    /**
+     * remove the first item.
+     *
      * @return the removed first item
      */
     @Override
@@ -131,7 +158,9 @@ public class ArrayDeque<T> implements Deque<T>{
         return ret;
     }
 
-    /** remove the last item.
+    /**
+     * remove the last item.
+     *
      * @return the removed last item
      */
     @Override
@@ -147,7 +176,9 @@ public class ArrayDeque<T> implements Deque<T>{
         return array[last];
     }
 
-    /** return the item indexed at index.
+    /**
+     * return the item indexed at index.
+     *
      * @param index index
      */
     @Override
@@ -162,7 +193,9 @@ public class ArrayDeque<T> implements Deque<T>{
         return array[ptr];
     }
 
-    /** print the entire deque from front to end. */
+    /**
+     * print the entire deque from front to end.
+     */
     @Override
     public void printDeque() {
         int ptr = front;

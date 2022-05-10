@@ -1,33 +1,51 @@
-public class LinkedListDeque<T> implements Deque<T>{
-    /** inner class Node. */
+public class LinkedListDeque<T> implements Deque<T> {
+    /**
+     * inner class Node.
+     */
     public class Node {
-        /** the item stored on this node. */
+        /**
+         * the item stored on this node.
+         */
         private T item;
-        /** the Node before this Node. **/
+        /**
+         * the Node before this Node.
+         **/
         private Node pre;
-        /** the Node after this Node. **/
+        /**
+         * the Node after this Node.
+         **/
         private Node next;
 
-        /** constructor for Node. */
+        /**
+         * constructor for Node.
+         */
         public Node(T n, Node ppre, Node nnext) {
             item = n;
             pre = ppre;
             next = nnext;
         }
 
-        /** constructor for Node.(especially for sentinel node). */
+        /**
+         * constructor for Node.(especially for sentinel node).
+         */
         public Node(Node ppre, Node nnext) {
             pre = ppre;
             next = nnext;
         }
     }
 
-    /** sentinel node. */
+    /**
+     * sentinel node.
+     */
     private Node sentinel;
-    /** size of the deque. */
+    /**
+     * size of the deque.
+     */
     private int size;
 
-    /** constructor for deque. */
+    /**
+     * constructor for deque.
+     */
     public LinkedListDeque() {
         sentinel = new Node(null, null);
         sentinel.pre = sentinel;

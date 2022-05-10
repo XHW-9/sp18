@@ -1,4 +1,4 @@
-public interface Deque <T>{
+public interface Deque<T> {
 
     public boolean isEmpty();
 
